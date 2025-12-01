@@ -1,13 +1,13 @@
 ---
-import { basics } from "@cv"
+import { basics } from "@cv";
 
 interface Props {
-  title: string
+  title: string;
 }
 
-const { title } = Astro.props
+const { title } = Astro.props;
 
-const { image, summary, url } = basics
+const { image, summary, url } = basics;
 ---
 
 <!doctype html>
@@ -25,13 +25,6 @@ const { image, summary, url } = basics
     <meta property="og:title" content={title} />
     <meta property="og:description" content={summary} />
     <meta property="og:image" content="" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content={url.split("//")[1] ?? ''} />
-    <meta property="twitter:url" content={url} />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={summary} />
-    <meta name="twitter:image" content="" />
   </head>
   <body>
     <slot />
@@ -50,7 +43,9 @@ const { image, summary, url } = basics
     background: #fff;
     letter-spacing: -0.025rem;
   }
-
+  body {
+    background-color: rgb(245, 245, 245);
+  }
   body,
   figure {
     margin: 0;
@@ -93,7 +88,7 @@ const { image, summary, url } = basics
   }
 
   p {
-    color: #666;
+    color: #434343;
     font-size: 0.9rem;
     line-height: 1.5;
     margin: 0;

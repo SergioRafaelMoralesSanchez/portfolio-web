@@ -1,14 +1,14 @@
 ---
 import Section from "../Section.astro"
 
-import { work } from "@cv"
+import { volunteer } from "@cv"
 ---
 
-<Section title="Experiencia laboral">
+<Section title="Voluntariado">
   <ul>
     {
-      work.map(
-        ({ name, startDate, endDate, position, summary, highlights, url }) => {
+      volunteer.map(
+        ({  organization, startDate, endDate, position, summary, highlights, url }) => {
           const startYear = new Date(startDate).getFullYear()
           const endYear =
             endDate != null ? new Date(endDate).getFullYear() : "Actual"
@@ -19,8 +19,8 @@ import { work } from "@cv"
                 <header>
                   <div>
                     <h3>
-                      <a href={url} title={`Ver ${name}`} target="_blank">
-                        {name}
+                      <a href={url} title={`Ver ${organization}`} target="_blank">
+                        {organization}
                       </a>
                     </h3>
                     <h4>{position}</h4>
@@ -42,7 +42,7 @@ import { work } from "@cv"
                 </header>
 
                 <footer>
-                  <p set:html={summary}></p>
+                  <p>{summary}</p>
                 </footer>
               </article>
             </li>
